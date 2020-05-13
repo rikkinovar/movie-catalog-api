@@ -7,24 +7,21 @@ import (
 	"os"
 
 	"github.com/go-chi/chi"
-	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/render"
-	"github.com/rikkinovar/movie-catalog-api/handlers"
-	httpSwagger "github.com/swaggo/http-swagger"
 )
 
 var version = "1.0.0"
 
 func createRouter() chi.Router {
 	router := chi.NewRouter()
-	swaggerURL := fmt.Sprintf("http://localhost:%s/swagger/doc.json", os.Getenv("APP_PORT"))
+	// swaggerURL := fmt.Sprintf("http://localhost:%s/swagger/doc.json", os.Getenv("APP_PORT"))
 
-	router.Use(middleware.RequestID)
-	router.Use(middleware.RealIP)
-	router.Use(middleware.Logger)
-	router.Use(middleware.Recoverer)
+	// router.Use(middleware.RequestID)
+	// router.Use(middleware.RealIP)
+	// router.Use(middleware.Logger)
+	// router.Use(middleware.Recoverer)
 	router.Use(render.SetContentType(render.ContentTypeJSON))
-	router.Get("/swagger/*", httpSwagger.Handler(httpSwagger.URL(swaggerURL)))
+	// router.Get("/swagger/*", httpSwagger.Handler(httpSwagger.URL(swaggerURL)))
 
 	router.Get("/", http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		payload := map[string]interface{}{
@@ -35,7 +32,7 @@ func createRouter() chi.Router {
 		writer.Write(response)
 	}))
 
-	router.Mount("/movies", (handlers.NewMovieHandler(movieService)).GetRoutes())
+	// router.Mount("/movies", (handlers.NewMovieHandler(movieService)).GetRoutes())
 
 	return router
 }
