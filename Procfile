@@ -1,0 +1,1 @@
+web: bin/movie-catalog-api serve

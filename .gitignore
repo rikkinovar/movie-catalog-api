@@ -1,3 +1,4 @@
 movie-catalog-api
 .DS_STORE
 .env
+bin
