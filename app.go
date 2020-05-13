@@ -41,12 +41,13 @@ func createRouter() chi.Router {
 }
 
 func serveHTTP() {
-	// router := createRouter()
-	port := os.Getenv("APP_PORT")
+	router := createRouter()
+	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8000"
 	}
 
-	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 	fmt.Printf("App running on port %s\n", port)
+	http.ListenAndServe(fmt.Sprintf(":%s", port), router)
+
 }
