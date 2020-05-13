@@ -29,7 +29,7 @@ func main() {
 	case "migrate":
 		db.Migrate(dbConn)
 	default:
-		fmt.Println("Invalid command")
+		fmt.Println("Invalid commandd")
 	}
 }
 
