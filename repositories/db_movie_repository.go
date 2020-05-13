@@ -57,6 +57,7 @@ func (repository *DBMovieRepository) Update(id int, data models.Movie) (models.M
 			"imdb_rating":  data.ImdbRating,
 			"poster_url":   data.PosterUrl,
 			"release_date": data.ReleaseDate,
+			"synopsis":     data.Synopsis,
 		}).Error
 	if err != nil {
 		return models.Movie{}, err

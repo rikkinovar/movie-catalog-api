@@ -105,6 +105,7 @@ func (handler *MovieHandler) Create(writer http.ResponseWriter, request *http.Re
 		ImdbRating:  requestData.ImdbRating,
 		ReleaseDate: releaseDate,
 		PosterUrl:   requestData.PosterUrl,
+		Synopsis:    requestData.Synopsis,
 	})
 	if err != nil {
 		render.Render(writer, request, errInternalServerError)
@@ -151,6 +152,7 @@ func (handler *MovieHandler) Update(writer http.ResponseWriter, request *http.Re
 		ImdbRating:  requestData.ImdbRating,
 		ReleaseDate: releaseDate,
 		PosterUrl:   requestData.PosterUrl,
+		Synopsis:    requestData.Synopsis,
 	})
 	if err != nil {
 		render.Render(writer, request, errBadRequest)

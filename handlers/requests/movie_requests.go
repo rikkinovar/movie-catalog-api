@@ -12,6 +12,7 @@ type CreateMovieRequests struct {
 	ImdbRating  float64 `json:"imdb_rating"`
 	ReleaseDate string  `json:"release_date"`
 	PosterUrl   string  `json:"poster_url"`
+	Synopsis    string  `json:"synopsis"`
 }
 
 func (req CreateMovieRequests) Bind(request *http.Request) error {

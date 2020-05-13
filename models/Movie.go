@@ -8,6 +8,7 @@ type Movie struct {
 	Genre       string     `json:"genre"`
 	ImdbRating  float64    `json:"imdb_rating"`
 	ReleaseDate time.Time  `json:"release_date"`
+	Synopsis    string     `json:"synopsis"`
 	PosterUrl   string     `json:"poster_url"`
 	CreatedAt   time.Time  `json:"created_at"`
 	UpdatedAt   *time.Time `json:"updated_at"`
