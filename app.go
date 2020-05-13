@@ -47,6 +47,6 @@ func serveHTTP() {
 		port = "8000"
 	}
 
-	fmt.Printf("App running on port %s\n", port)
 	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
+	fmt.Printf("App running on port %s\n", port)
 }
